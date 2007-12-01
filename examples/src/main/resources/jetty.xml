@@ -1,0 +1,29 @@
+<?xml version="1.0"  encoding="ISO-8859-1"?>
+<!DOCTYPE Configure PUBLIC "-//Mort Bay Consulting//DTD Configure//EN" "http://jetty.mortbay.org/configure.dtd">
+        
+<Configure id="Server" class="org.mortbay.jetty.Server">
+    <Call name="addConnector">
+          <Arg>
+          <New class="org.mortbay.jetty.nio.SelectChannelConnector">
+            <Set name="port">8080</Set>
+            <Set name="maxIdleTime">30000</Set>
+            <Set name="Acceptors">10</Set>
+          </New>
+        </Arg>
+      </Call>
+      <Call name="addConnector">
+        <Arg>
+          <New class="org.mortbay.jetty.security.SslSocketConnector">
+            <Set name="Port">8443</Set>
+            <Set name="maxIdleTime">30000</Set>
+            <Set name="keystore">src/main/resources/jetty.keystore</Set>
+            <Set name="password">password</Set>
+            <Set name="keyPassword">password</Set>
+            <Set name="truststore">src/main/resources/jetty.keystore</Set>
+            <Set name="trustPassword">password</Set>
+          </New>
+        </Arg>
+      </Call>
+</Configure>
+
+
