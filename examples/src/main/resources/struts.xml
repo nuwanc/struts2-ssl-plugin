@@ -5,17 +5,17 @@
     "http://struts.apache.org/dtds/struts-2.0.dtd">
 
 <struts>
-	<package name="myPackage" extends="ssl-default">
+	<package name="myPackage1" extends="ssl-default" namespace="/secured">
 
-        <!-- How to Configureing the Interceptor to use user sepecified ports.
+        <!-- How to Configureing the Interceptor to use user sepecified ports.-->
         <interceptors>
         <interceptor-stack name="SecureStack">
         <interceptor-ref name="secure">
-            <param name="httpPort">80</param>
-            <param name="httpsPort">443</param>
+            <param name="useAnnotations">false</param>
          </interceptor-ref>
+         <interceptor-ref name="defaultStack"/>
         </interceptor-stack>
-        </interceptors> -->
+        </interceptors>
 
         <action name="index" class="com.googlecode.sslplugin.example.IndexAction">
 			<result>/jsp/index.jsp</result>
@@ -37,4 +37,38 @@
 		</action>
 
     </package>
+
+    <package name="myPackage2" extends="ssl-default" namespace="/annotaed">
+
+        <!-- How to Configureing the Interceptor to use user sepecified ports.-->
+        <interceptors>
+        <interceptor-stack name="SecureStack">
+        <interceptor-ref name="secure">
+            <param name="httpsPort">443</param>
+         </interceptor-ref>
+         <interceptor-ref name="defaultStack"/>
+        </interceptor-stack>
+        </interceptors>
+
+        <action name="index" class="com.googlecode.sslplugin.example.IndexAction">
+			<result>/jsp/index.jsp</result>
+		</action>
+
+        <action name="index1" class="com.googlecode.sslplugin.example.IndexAction" method="execute1">
+			<result>/jsp/index1.jsp</result>
+		</action>
+
+
+        <action name="helloWorld" class="com.googlecode.sslplugin.example.HelloWorldAction">
+			<result name="input">/jsp/index.jsp</result>
+			<result>/jsp/helloWorld.jsp</result>
+		</action>
+
+        <action name="helloWorld1" class="com.googlecode.sslplugin.example.HelloWorldAction" method="execute1">
+			<result name="input">/jsp/index1.jsp</result>
+			<result>/jsp/helloWorld.jsp</result>
+		</action>
+
+    </package>
+
 </struts>
