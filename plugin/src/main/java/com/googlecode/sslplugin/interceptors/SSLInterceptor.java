@@ -1,11 +1,5 @@
 package com.googlecode.sslplugin.interceptors;
 
-/**
- *
- * @author Nuwan
- */
-
-
 
 //Java API imports
 import java.lang.reflect.Method;
@@ -84,7 +78,7 @@ public class SSLInterceptor extends AbstractInterceptor {
         Method method2 = getActionMethod(action.getClass(), invocation.getProxy().getMethod());
 
 
-        if (action.getClass().isAnnotationPresent(Secured.class) || method2.isAnnotationPresent(Secured.class) ){
+        if ( !isUseAnnotations() || action.getClass().isAnnotationPresent(Secured.class) || method2.isAnnotationPresent(Secured.class) ){
 
 
             if ( (HTTP_GET.equals(method) || HTTP_POST.equals(method)) && SCHEME_HTTP.equals(scheme)){
