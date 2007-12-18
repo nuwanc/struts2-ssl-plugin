@@ -1,4 +1,3 @@
-
 #summary One-sentence summary of this page.
 
 = Overview =
@@ -160,3 +159,15 @@ public class IndexAction extends ActionSupport {
 
 
 }
+
+= Settings =
+
+The following settings can be customized.
+
+httpsPort – https port number to use
+httpPort – http port number to use
+useAnnotations – true/false to use annotations or not.
+
+= Installation = 
+
+This plug-in can be installed by copying the plug-in jar into your application's /WEB-INF/lib directory. No other files need to be copied or created
