@@ -164,9 +164,9 @@ public class IndexAction extends ActionSupport {
 
 The following settings can be customized.
 
-httpsPort – https port number to use
-httpPort – http port number to use
-useAnnotations – true/false to use annotations or not.
+* httpsPort – https port number to use
+* httpPort – http port number to use
+* useAnnotations – true/false to use annotations or not.
 
 = Installation = 
 
