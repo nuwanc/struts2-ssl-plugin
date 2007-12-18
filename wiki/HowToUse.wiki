@@ -1,3 +1,4 @@
+#labels Featured
 = Overview =
 
 This struts2 plugin is designed to redirect request in http or https mode based on a annotation available in class or method level.
