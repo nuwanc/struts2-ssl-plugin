@@ -88,4 +88,39 @@ The plug-in extends struts-default so you can extend the "ssl-default" package t
 			<result>/jsp/helloWorld.jsp</result>
 		</action>
 
-    </package> 
+    </package>
+
+* How to configure all the methods in the class to redirect in https mode.
+ Note: if the @Secured annotation is present in the class level all the action methods will redirect in https mode. 
+@Secured
+public class IndexAction extends ActionSupport {
+
+        // configure the logger for this class
+    private static Log log = LogFactory.getLog(IndexAction.class);
+
+    /**
+     * This method will not be called in https mode.
+     *
+     * @return
+     * @throws Exception
+     */
+    public String execute() throws Exception {
+        log.info("Inside execute() method");
+        return SUCCESS;
+    }
+
+
+    /**
+     * This method is called in https mode, as it has the @Secured annotation
+     *
+     * @return
+     * @throws Exception
+     */
+    public String execute1() throws Exception {
+        log.info("Inside execute1() method");
+        return SUCCESS;
+    }
+
+
+}
+ 
