@@ -1,0 +1,15 @@
+#summary One-sentence summary of this page.
+
+= Overview =
+
+This struts2 plugin is designed to redirect request in http or https mode based on a annotation available in class or method level.
+
+
+= Features =
+
+  * Annotation and Non-annotation based usage
+  * Class level or method level annotation usage
+  * Port configuration
+
+
+= Usage =
