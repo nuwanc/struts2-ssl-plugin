@@ -13,3 +13,79 @@ This struts2 plugin is designed to redirect request in http or https mode based 
 
 
 = Usage =
+
+The plug-in extends struts-default so you can extend the "ssl-default" package to get these additional features.
+
+= Examples =
+
+   * How to configure all actions in a package to go in https mode. 
+ Note: Setting the useAnnotations property to false will override the default behavior of the plugin to ignore the annotation and make every action in the package to redirect in https mode.
+
+	<package name="myPackage1" extends="ssl-default" namespace="/secured">
+
+        <!-- How to Configureing the Interceptor to use user sepecified properties.-->
+        <interceptors>
+        <interceptor-stack name="SecureStack">
+        <interceptor-ref name="secure">
+            <param name="useAnnotations">false</param>
+         </interceptor-ref>
+         <interceptor-ref name="defaultStack"/>
+        </interceptor-stack>
+        </interceptors>
+
+        <action name="index" class="com.googlecode.sslplugin.example.IndexAction">
+			<result>/jsp/index.jsp</result>
+		</action>
+
+        <action name="index1" class="com.googlecode.sslplugin.example.IndexAction" method="execute1">
+			<result>/jsp/index1.jsp</result>
+		</action>
+
+
+        <action name="helloWorld" class="com.googlecode.sslplugin.example.HelloWorldAction">
+			<result name="input">/jsp/index.jsp</result>
+			<result>/jsp/helloWorld.jsp</result>
+		</action>
+
+        <action name="helloWorld1" class="com.googlecode.sslplugin.example.HelloWorldAction" method="execute1">
+			<result name="input">/jsp/index1.jsp</result>
+			<result>/jsp/helloWorld.jsp</result>
+		</action>
+
+    </package>
+
+ * How to configure the plugin to use user specified ports
+Note: setting the httpPort or httpsPort will override the default ports used based the plugin (8080 and 8443) , based on the annotation (@Secured) available in the class level or method level redirection will happen.
+
+    <package name="myPackage2" extends="ssl-default" namespace="/annotaed">
+
+        <!-- How to Configureing the Interceptor to use user sepecified ports.-->
+        <interceptors>
+        <interceptor-stack name="SecureStack">
+        <interceptor-ref name="secure">
+            <param name="httpsPort">443</param>
+         </interceptor-ref>
+         <interceptor-ref name="defaultStack"/>
+        </interceptor-stack>
+        </interceptors>
+
+        <action name="index" class="com.googlecode.sslplugin.example.IndexAction">
+			<result>/jsp/index.jsp</result>
+		</action>
+
+        <action name="index1" class="com.googlecode.sslplugin.example.IndexAction" method="execute1">
+			<result>/jsp/index1.jsp</result>
+		</action>
+
+
+        <action name="helloWorld" class="com.googlecode.sslplugin.example.HelloWorldAction">
+			<result name="input">/jsp/index.jsp</result>
+			<result>/jsp/helloWorld.jsp</result>
+		</action>
+
+        <action name="helloWorld1" class="com.googlecode.sslplugin.example.HelloWorldAction" method="execute1">
+			<result name="input">/jsp/index1.jsp</result>
+			<result>/jsp/helloWorld.jsp</result>
+		</action>
+
+    </package> 
