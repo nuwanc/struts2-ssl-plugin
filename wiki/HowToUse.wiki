@@ -21,6 +21,7 @@ The plug-in extends struts-default so you can extend the "ssl-default" package t
    * How to configure all actions in a package to go in https mode. 
  Note: Setting the useAnnotations property to false will override the default behavior of the plugin to ignore the annotation and make every action in the package to redirect in https mode.
 
+{{{ 
 	<package name="myPackage1" extends="ssl-default" namespace="/secured">
 
         <!-- How to Configureing the Interceptor to use user sepecified properties.-->
@@ -53,10 +54,12 @@ The plug-in extends struts-default so you can extend the "ssl-default" package t
 		</action>
 
     </package>
+}}}
 
  * How to configure the plugin to use user specified ports
  Note: setting the httpPort or httpsPort will override the default ports used based the plugin (8080 and 8443) , based on the annotation (@Secured) available in the class level or method level redirection will happen.
 
+{{{
     <package name="myPackage2" extends="ssl-default" namespace="/annotaed">
 
         <!-- How to Configureing the Interceptor to use user sepecified ports.-->
@@ -89,6 +92,7 @@ The plug-in extends struts-default so you can extend the "ssl-default" package t
 		</action>
 
     </package>
+}}}
 
  * How to configure all the methods in the class to redirect in https mode.
  Note: if the @Secured annotation is present in the class level all the action methods will redirect in https mode.
