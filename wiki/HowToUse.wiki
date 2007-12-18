@@ -93,6 +93,7 @@ The plug-in extends struts-default so you can extend the "ssl-default" package t
  * How to configure all the methods in the class to redirect in https mode.
  Note: if the @Secured annotation is present in the class level all the action methods will redirect in https mode.
  
+{{{
 @Secured
 public class IndexAction extends ActionSupport {
 
@@ -124,10 +125,12 @@ public class IndexAction extends ActionSupport {
 
 
 }
- 
+}}} 
+
  * How to configure specified the methods in the class to redirect in https mode.
 Note : only the action method execute1() method will redirect in https mode as @Secured annotation is only present in that method.
 
+{{{
 public class IndexAction extends ActionSupport {
 
         // configure the logger for this class
@@ -159,6 +162,7 @@ public class IndexAction extends ActionSupport {
 
 
 }
+}}}
 
 = Settings =
 
