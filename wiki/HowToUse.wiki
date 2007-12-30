@@ -34,23 +34,23 @@ The plug-in extends struts-default so you can extend the "ssl-default" package t
         </interceptors>
 
         <action name="index" class="com.googlecode.sslplugin.example.IndexAction">
-			<result>/jsp/index.jsp</result>
-		</action>
+		<result>/jsp/index.jsp</result>
+	</action>
 
         <action name="index1" class="com.googlecode.sslplugin.example.IndexAction" method="execute1">
-			<result>/jsp/index1.jsp</result>
-		</action>
+		<result>/jsp/index1.jsp</result>
+	</action>
 
 
         <action name="helloWorld" class="com.googlecode.sslplugin.example.HelloWorldAction">
-			<result name="input">/jsp/index.jsp</result>
-			<result>/jsp/helloWorld.jsp</result>
-		</action>
+		<result name="input">/jsp/index.jsp</result>
+		<result>/jsp/helloWorld.jsp</result>
+	</action>
 
         <action name="helloWorld1" class="com.googlecode.sslplugin.example.HelloWorldAction" method="execute1">
-			<result name="input">/jsp/index1.jsp</result>
-			<result>/jsp/helloWorld.jsp</result>
-		</action>
+		<result name="input">/jsp/index1.jsp</result>
+		<result>/jsp/helloWorld.jsp</result>
+	</action>
 
     </package>
 }}}
@@ -72,23 +72,23 @@ The plug-in extends struts-default so you can extend the "ssl-default" package t
         </interceptors>
 
         <action name="index" class="com.googlecode.sslplugin.example.IndexAction">
-			<result>/jsp/index.jsp</result>
-		</action>
+		<result>/jsp/index.jsp</result>
+	</action>
 
         <action name="index1" class="com.googlecode.sslplugin.example.IndexAction" method="execute1">
-			<result>/jsp/index1.jsp</result>
-		</action>
+		<result>/jsp/index1.jsp</result>
+	</action>
 
 
         <action name="helloWorld" class="com.googlecode.sslplugin.example.HelloWorldAction">
-			<result name="input">/jsp/index.jsp</result>
-			<result>/jsp/helloWorld.jsp</result>
-		</action>
+		<result name="input">/jsp/index.jsp</result>
+		<result>/jsp/helloWorld.jsp</result>
+	</action>
 
         <action name="helloWorld1" class="com.googlecode.sslplugin.example.HelloWorldAction" method="execute1">
-			<result name="input">/jsp/index1.jsp</result>
-			<result>/jsp/helloWorld.jsp</result>
-		</action>
+		<result name="input">/jsp/index1.jsp</result>
+		<result>/jsp/helloWorld.jsp</result>
+	</action>
 
     </package>
 }}}
