@@ -56,7 +56,7 @@ The plug-in extends struts-default so you can extend the "ssl-default" package t
 }}}
 
  * How to configure the plugin to use user specified ports
- Note: setting the httpPort or httpsPort will override the default ports used based the plugin (8080 and 8443) , based on the annotation (@Secured) available in the class level or method level redirection will happen.
+ Note: setting the httpPort or httpsPort will override the default ports used by the plugin (8080 and 8443) , based on the annotation (@Secured) available in the class level or method level redirection will happen.
 
 {{{
     <package name="myPackage2" extends="ssl-default" namespace="/annotaed">
