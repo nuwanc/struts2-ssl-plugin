@@ -2,20 +2,27 @@ package com.googlecode.sslplugin.interceptors;
 
 
 //Java API imports
-import java.lang.reflect.Method;
-import java.net.URI;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-//Struts API imports
-import com.opensymphony.xwork2.ActionContext;
-import com.opensymphony.xwork2.ActionInvocation;
-import com.opensymphony.xwork2.interceptor.AbstractInterceptor;
-import org.apache.struts2.StrutsStatics;
+import java.lang.reflect.Method;
+import java.net.URI;
+
 //Commons API imports
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
+//Struts API imports
+import com.opensymphony.xwork2.ActionContext;
+import com.opensymphony.xwork2.ActionInvocation;
+import com.opensymphony.xwork2.inject.Inject;
+import com.opensymphony.xwork2.interceptor.AbstractInterceptor;
+import org.apache.struts2.StrutsStatics;
+
+
 import com.googlecode.sslplugin.annotation.Secured;
+
+
+
 
 /**
  *
@@ -69,7 +76,7 @@ public class SSLInterceptor extends AbstractInterceptor {
         String method = request.getMethod().toUpperCase();
 
 
-        // if userAnnotations is true check for the annotaion marker in the class level or method level
+        // if useAnnotations is true check for the annotaion marker in the class level or method level
         // else make every request secure.
         // If the action class/method uses the Secured marker annotation, then see if we need to
         // redirect to the SSL protected version of this page
@@ -142,6 +149,7 @@ public class SSLInterceptor extends AbstractInterceptor {
         return httpsPort;
     }
 
+    @Inject(value="struts2.sslplugin.httpsPort",required = false)
     public void setHttpsPort(String httpsPort) {
         this.httpsPort = httpsPort;
     }
@@ -150,6 +158,7 @@ public class SSLInterceptor extends AbstractInterceptor {
         return httpPort;
     }
 
+    @Inject(value = "struts2.sslplugin.httpPort", required = false)
     public void setHttpPort(String httpPort) {
         this.httpPort = httpPort;
     }
@@ -162,6 +171,13 @@ public class SSLInterceptor extends AbstractInterceptor {
         this.useAnnotations = useAnnotations;
     }
 
+    @Inject(value = "struts2.sslplugin.annotations", required = false)
+    public void setAnnotations(String annotations) {
+        if (annotations==null) {
+            annotations = "true";
+        }
+        this.useAnnotations = new Boolean(annotations).booleanValue();
+    }
 
 }
 
