@@ -186,7 +186,7 @@ Add a constant element to your struts config file to change the value of a confi
 <constant name="struts2.sslplugin.httpPort" value="80"/>
 }}}
 
-||*Name*||*Default Value*||*Description*||
+|| *Name* || *Default Value* || *Description* ||
 ||struts2.sslplugin.httpPort||8080||http port use for redirection||
 ||struts2.sslplugin.httpsPort||8443||https port use for redirection||
 ||struts2.sslplugin.annotations||true||use annotations||
