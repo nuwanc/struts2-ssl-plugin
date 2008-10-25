@@ -9,6 +9,7 @@ This struts2 plugin is designed to redirect request in http or https mode based 
   * Annotation and Non-annotation based usage
   * Class level or method level annotation usage
   * Port configuration
+  * configuration using constants (In version 1.1) 
 
 
 = Usage =
@@ -174,6 +175,23 @@ The following settings can be customized.
  * httpsPort – https port number to use
  * httpPort – http port number to use
  * useAnnotations – true/false to use annotations or not.
+
+= Configuration reference =
+
+* Only support in version 1.1 *
+
+Add a constant element to your struts config file to change the value of a configuration setting, like:
+
+{{{
+<constant name="struts2.sslplugin.httpPort" value="80"/>
+}}}
+
+||*Name*||*Default Value*||*Description*||
+||struts2.sslplugin.httpPort||8080||http port use for redirection||
+||struts2.sslplugin.httpsPort||8443||https port use for redirection||
+||struts2.sslplugin.annotations||true||use annotations||
+
+
 
 = Installation = 
 
