@@ -149,7 +149,7 @@ public class SSLInterceptor extends AbstractInterceptor {
         return httpsPort;
     }
 
-    @Inject(value="struts2.sslplugin.httpsPort",required = false)
+
     public void setHttpsPort(String httpsPort) {
         this.httpsPort = httpsPort;
     }
@@ -158,7 +158,7 @@ public class SSLInterceptor extends AbstractInterceptor {
         return httpPort;
     }
 
-    @Inject(value = "struts2.sslplugin.httpPort", required = false)
+
     public void setHttpPort(String httpPort) {
         this.httpPort = httpPort;
     }
@@ -171,13 +171,6 @@ public class SSLInterceptor extends AbstractInterceptor {
         this.useAnnotations = useAnnotations;
     }
 
-    @Inject(value = "struts2.sslplugin.annotations", required = false)
-    public void setAnnotations(String annotations) {
-        if (annotations==null) {
-            annotations = "true";
-        }
-        this.useAnnotations = new Boolean(annotations).booleanValue();
-    }
 
 }
 
