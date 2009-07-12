@@ -178,7 +178,7 @@ The following settings can be customized.
 
 = Configuration reference =
 
-* Only support in version 1.1 *
+* Only support in version 1.1 or higher *
 
 Add a constant element to your struts config file to change the value of a configuration setting, like:
 
