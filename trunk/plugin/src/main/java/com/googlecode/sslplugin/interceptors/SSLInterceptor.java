@@ -17,6 +17,7 @@ import com.opensymphony.xwork2.ActionInvocation;
 import com.opensymphony.xwork2.inject.Inject;
 import com.opensymphony.xwork2.interceptor.AbstractInterceptor;
 import org.apache.struts2.StrutsStatics;
+import com.googlecode.sslplugin.util.RequestUtil;
 
 
 import com.googlecode.sslplugin.annotation.Secured;
@@ -95,7 +96,7 @@ public class SSLInterceptor extends AbstractInterceptor {
 
                 URI uri = new URI(SCHEME_HTTPS, null, request.getServerName(),
                     httpsPort, response.encodeRedirectURL(request.getRequestURI()),
-                    request.getQueryString(), null);
+                    RequestUtil.buildQueryString(request), null);
 
                 log.info("Going to SSL mode, redirecting to " + uri.toString());
 
@@ -114,7 +115,7 @@ public class SSLInterceptor extends AbstractInterceptor {
 
                 URI uri = new URI(SCHEME_HTTP, null, request.getServerName(),
                     httpPort, response.encodeRedirectURL(request.getRequestURI()),
-                    request.getQueryString(), null);
+                    RequestUtil.buildQueryString(request), null);
 
                 log.info("Going to non-SSL mode, redirecting to " + uri.toString());
 

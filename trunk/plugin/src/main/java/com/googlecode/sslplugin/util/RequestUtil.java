@@ -1,7 +1,5 @@
 package com.googlecode.sslplugin.util;
 
-import org.apache.struts2.views.jsp.TagUtils;
-
 import javax.servlet.http.HttpServletRequest;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;

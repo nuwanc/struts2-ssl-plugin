@@ -11,14 +11,14 @@
         <interceptors>
             <interceptor class="com.googlecode.sslplugin.interceptors.SSLInterceptor" name="secure" />
 
-            <interceptor-stack name="SecureStack">
+            <interceptor-stack name="secureStack">
                 <interceptor-ref name="secure"/>
                 <interceptor-ref name="defaultStack"/>
             </interceptor-stack>
 
         </interceptors>
 
-        <default-interceptor-ref name="SecureStack"/>
+        <default-interceptor-ref name="secureStack"/>
 
     </package>
 
