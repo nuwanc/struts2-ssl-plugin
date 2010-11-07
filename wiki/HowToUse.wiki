@@ -131,7 +131,7 @@ public class IndexAction extends ActionSupport {
 }
 }}} 
 
- * How to configure specified the methods in the class to redirect in https mode.
+ * How to configure specific methods in a class to redirect in https mode.
 Note : only the action method execute1() method will redirect in https mode as @Secured annotation is only present in that method.
 
 {{{
