@@ -26,7 +26,7 @@ The plug-in extends struts-default so you can extend the "ssl-default" package t
 
         <!-- How to Configureing the Interceptor to use user sepecified properties.-->
         <interceptors>
-        <interceptor-stack name="SecureStack">
+        <interceptor-stack name="secureStack">
         <interceptor-ref name="secure">
             <param name="useAnnotations">false</param>
          </interceptor-ref>
@@ -64,7 +64,7 @@ The plug-in extends struts-default so you can extend the "ssl-default" package t
 
         <!-- How to Configureing the Interceptor to use user sepecified ports.-->
         <interceptors>
-        <interceptor-stack name="SecureStack">
+        <interceptor-stack name="secureStack">
         <interceptor-ref name="secure">
             <param name="httpsPort">443</param>
          </interceptor-ref>
