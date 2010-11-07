@@ -105,7 +105,7 @@ public class IndexAction extends ActionSupport {
     private static Log log = LogFactory.getLog(IndexAction.class);
 
     /**
-     * This method will not be called in https mode.
+     * This method is called in https mode, as it has the @Secured annotation in class level.
      *
      * @return
      * @throws Exception
@@ -117,7 +117,7 @@ public class IndexAction extends ActionSupport {
 
 
     /**
-     * This method is called in https mode, as it has the @Secured annotation
+     * This method is called in https mode, as it has the @Secured annotation in class level.
      *
      * @return
      * @throws Exception
